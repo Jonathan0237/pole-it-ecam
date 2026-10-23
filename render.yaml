@@ -1,0 +1,10 @@
+# Déploiement en un clic sur Render (offre gratuite) : New > Blueprint > ce dépôt
+services:
+  - type: web
+    name: pole-it-ecam
+    runtime: docker
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: DEMO_MODE
+        value: "true"

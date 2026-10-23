@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  php:
+    name: Lint, tests et smoke test (PHP ${{ matrix.php }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php: ['8.2', '8.3']
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: pdo_sqlite, mbstring
+          coverage: none
+
+      - name: Vérification de la syntaxe
+        run: find src public bin tests -name '*.php' -print0 | xargs -0 -n1 php -l > /dev/null
+
+      - name: Tests unitaires
+        run: php tests/run.php
+
+      - name: Smoke test HTTP
+        run: |
+          php bin/seed.php
+          php -S 127.0.0.1:8000 -t public router.php > /tmp/server.log 2>&1 &
+          sleep 1
+          for path in / /a-propos.php /admission.php /stage.php /insertion.php /contact.php /admin/login.php; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "http://127.0.0.1:8000$path")
+            echo "$path -> $code"
+            test "$code" = "200"
+          done
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:8000/page-inexistante)" = "404"
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:8000/admin/)" = "303"
+          ! grep -iE 'warning|fatal|deprecated' /tmp/server.log
+
+  docker:
+    name: Image Docker
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Construction et démarrage
+        run: |
+          docker build -t pole-it .
+          docker run -d -p 8080:80 --name pole-it pole-it
+          for i in $(seq 1 20); do curl -sf http://127.0.0.1:8080/ > /dev/null && break; sleep 1; done
+          curl -sf http://127.0.0.1:8080/ | grep -q 'Pôle'
+          curl -sf http://127.0.0.1:8080/assets/css/style.css > /dev/null

@@ -1,0 +1,14 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    environment:
+      DEMO_MODE: "true"
+      # ADMIN_USER: admin
+      # ADMIN_PASSWORD_HASH: généré avec php -r 'echo password_hash("motdepasse", PASSWORD_DEFAULT);'
+    volumes:
+      - data:/var/www/app/data
+
+volumes:
+  data:
