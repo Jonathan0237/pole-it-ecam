@@ -10,6 +10,8 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES2020-F7DF1E?logo=javascript&logoColor=black)
 ![Docker](https://img.shields.io/badge/Docker-prêt-2496ED?logo=docker&logoColor=white)
 
+**[Voir la démo en ligne](https://pole-it-ecam.onrender.com)** · espace admin : `demo` / `demo`
+
 <img src="docs/captures/accueil.jpg" alt="Page d'accueil du site Pôle IT" width="860">
 
 </div>
@@ -165,6 +167,8 @@ Les 23 tests couvrent la validation, les règles des formulaires, l'accès aux d
 ## Déploiement
 
 Le dépôt contient un `render.yaml` : sur [Render](https://render.com), choisir **New > Blueprint**, puis sélectionner ce dépôt. L'image Docker s'adapte au port imposé par l'hébergeur et charge des données de démonstration au premier démarrage.
+
+Démo actuelle : https://pole-it-ecam.onrender.com. Sur l'offre gratuite, le service se met en veille : le premier chargement peut prendre une trentaine de secondes, et la base est réinitialisée à chaque redéploiement.
 
 ## Avant / après
 
