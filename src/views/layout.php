@@ -40,9 +40,9 @@ $services = [
 
 <header class="site-header" data-header>
     <div class="container header-inner">
-        <a class="brand" href="/" aria-label="Pôle IT, accueil">
-            <span class="brand-mark" aria-hidden="true"><i class="fa-solid fa-microchip"></i></span>
-            <span class="brand-text">Pôle IT<small>ECAM-EPMI</small></span>
+        <a class="brand" href="/" aria-label="Pôle IT ECAM-EPMI, accueil">
+            <span class="brand-logo"><img src="/assets/img/logo-ecam-epmi.png" alt="ECAM-EPMI" width="157" height="26"></span>
+            <span class="brand-text">Pôle IT</span>
         </a>
 
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" data-nav-toggle>
@@ -107,8 +107,8 @@ $services = [
     <div class="container footer-grid">
         <div>
             <a class="brand brand-footer" href="/">
-                <span class="brand-mark" aria-hidden="true"><i class="fa-solid fa-microchip"></i></span>
-                <span class="brand-text">Pôle IT<small>ECAM-EPMI</small></span>
+                <span class="brand-logo"><img src="/assets/img/logo-ecam-epmi.png" alt="ECAM-EPMI" width="157" height="26"></span>
+                <span class="brand-text">Pôle IT</span>
             </a>
             <p class="muted">Projet de développement web réalisé en 2022 à l'ECAM-EPMI, refondu en 2026 en PHP.</p>
         </div>

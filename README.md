@@ -184,4 +184,4 @@ Projet du groupe 12, ECAM-EPMI (2022-2023) :
 - Will Jerph Yemeufack
 - Fabrice Talla Teneku
 
-Les photos proviennent des supports de présentation de l'école et sont utilisées dans un cadre pédagogique. Les icônes viennent de [Font Awesome Free](https://fontawesome.com) (licence CC BY 4.0 / SIL OFL / MIT).
+Le logo et les photos appartiennent à l'ECAM-EPMI et sont utilisés dans un cadre pédagogique. Les icônes viennent de [Font Awesome Free](https://fontawesome.com) (licence CC BY 4.0 / SIL OFL / MIT).

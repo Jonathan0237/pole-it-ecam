@@ -20,8 +20,8 @@ $rows = [
         <article class="fiche panel">
             <header class="fiche-head">
                 <div class="brand">
-                    <span class="brand-mark" aria-hidden="true"><i class="fa-solid fa-microchip"></i></span>
-                    <span class="brand-text">Pôle IT<small>ECAM-EPMI</small></span>
+                    <span class="brand-logo"><img src="/assets/img/logo-ecam-epmi.png" alt="ECAM-EPMI" width="157" height="26"></span>
+                    <span class="brand-text">Pôle IT</span>
                 </div>
                 <div class="fiche-ref">
                     <span>Référence</span>
