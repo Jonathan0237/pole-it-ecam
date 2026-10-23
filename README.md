@@ -127,7 +127,7 @@ pole-it-ecam/
 │   ├── Validator.php       # Validation serveur réutilisable (API fluide)
 │   ├── Csrf.php, FormGuard.php, Auth.php
 │   └── views/              # Gabarit commun et vues
-├── tests/                  # 23 tests unitaires, sans dépendance
+├── tests/                  # 24 tests unitaires, sans dépendance
 ├── bin/seed.php            # Données de démonstration
 ├── Dockerfile, docker-compose.yml, render.yaml
 └── .github/workflows/ci.yml
@@ -158,7 +158,7 @@ pole-it-ecam/
 php tests/run.php
 ```
 
-Les 23 tests couvrent la validation, les règles des formulaires, l'accès aux données (pagination, recherche, injections) et les protections de sécurité. À chaque push, la CI GitHub Actions :
+Les 24 tests couvrent la validation, les règles des formulaires, l'accès aux données (pagination, recherche, injections) et les protections de sécurité. À chaque push, la CI GitHub Actions :
 1. vérifie la syntaxe de tous les fichiers PHP (versions 8.2 et 8.3) ;
 2. lance les tests unitaires ;
 3. démarre le serveur et contrôle les codes HTTP de chaque page, ainsi que l'absence d'avertissement PHP ;
