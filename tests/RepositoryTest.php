@@ -54,3 +54,12 @@ test('Repository : table ou colonne inconnue refusée', function () {
     try { (new Repository('stages'))->findBy('1=1 OR reference', 'x'); } catch (InvalidArgumentException) { $thrown = true; }
     assert_true($thrown);
 });
+
+test('Repository : date du plus récent non lu', function () {
+    $repo = new Repository('messages');
+    assert_same(null, $repo->latestUnread());
+    $id = $repo->insert(message('Jean', 'jean@test.fr'));
+    assert_true($repo->latestUnread() !== null);
+    $repo->markRead($id);
+    assert_same(null, $repo->latestUnread());
+});

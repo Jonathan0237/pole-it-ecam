@@ -22,7 +22,7 @@ $services = [
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= e($title) ?></title>
     <meta name="description" content="<?= e($description) ?>">
-    <meta name="theme-color" content="#14295e">
+    <meta name="theme-color" content="#172c80">
     <meta property="og:title" content="<?= e($title) ?>">
     <meta property="og:description" content="<?= e($description) ?>">
     <meta property="og:image" content="/assets/img/amphi-2.jpg">

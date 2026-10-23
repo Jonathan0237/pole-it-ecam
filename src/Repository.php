@@ -91,6 +91,13 @@ final class Repository
         return (int) $this->db()->query("SELECT COUNT(*) FROM {$this->table} WHERE lu = 0")->fetchColumn();
     }
 
+    /** Date du plus récent élément non lu, ou null. */
+    public function latestUnread(): ?string
+    {
+        $value = $this->db()->query("SELECT MAX(created_at) FROM {$this->table} WHERE lu = 0")->fetchColumn();
+        return $value === false || $value === null ? null : (string) $value;
+    }
+
     public function markRead(int $id): void
     {
         $this->db()->prepare("UPDATE {$this->table} SET lu = 1 WHERE id = ?")->execute([$id]);

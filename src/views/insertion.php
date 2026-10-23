@@ -6,7 +6,7 @@
             <ul class="check-list">
                 <li><strong>80 %</strong> de nos étudiants trouvent un premier emploi avant même l'obtention de leur diplôme.</li>
                 <li>Un salaire d'embauche annuel moyen de <strong>40 000 € brut</strong> la première année.</li>
-                <li>La possibilité de poursuivre ses études : mastères spécialisés, MBA, doctorat.</li>
+                <li>La possibilité de poursuivre ses études : MBA ou doctorat.</li>
             </ul>
             <p class="muted small">Chiffres présentés lors du projet en 2022.</p>
         </div>

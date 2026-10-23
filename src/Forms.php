@@ -21,7 +21,6 @@ final class Forms
         'cycle-prepa'   => 'Cycle préparatoire intégré',
         'ingenieur-fi'  => 'Cycle ingénieur, formation initiale',
         'ingenieur-app' => 'Cycle ingénieur par apprentissage',
-        'mastere'       => 'Mastère spécialisé',
     ];
 
     public const DOMAINES = [

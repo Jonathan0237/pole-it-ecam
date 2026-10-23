@@ -4,9 +4,6 @@
         <form method="post" action="/admin/login.php" class="form panel">
             <h1 class="section-title">Espace <span>admin</span></h1>
             <?php if ($error): ?><div class="alert alert-error" role="alert"><?= e($error) ?></div><?php endif; ?>
-            <?php if (DEMO_MODE && !getenv('ADMIN_PASSWORD_HASH')): ?>
-                <p class="alert alert-info">Démo : identifiant <code>demo</code>, mot de passe <code>demo</code>.</p>
-            <?php endif; ?>
             <?= Csrf::field() ?>
             <div class="field">
                 <label for="utilisateur">Identifiant</label>

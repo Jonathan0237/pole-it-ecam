@@ -47,7 +47,7 @@ foreach (array_slice($people, 2, 4) as $i => $p) {
     $id = $admissions->insert([
         'prenom' => $p[0], 'nom' => $p[1], 'email' => $mail($p), 'telephone' => '06' . str_pad((string) (12345678 + $i * 1111), 8, '0'),
         'adresse' => (10 + $i) . ' avenue de la Gare', 'code_postal' => '9500' . $i, 'ville' => 'Cergy',
-        'niveau' => $niveaux[$i % 4], 'programme' => $programmes[$i % 4],
+        'niveau' => $niveaux[$i % count($niveaux)], 'programme' => $programmes[$i % count($programmes)],
         'motivation' => "Passionné(e) par le numérique, je souhaite rejoindre le Pôle IT pour me former au développement et aux systèmes embarqués.",
     ]);
     $pdo->prepare('UPDATE admissions SET created_at = ? WHERE id = ?')->execute([$at(5 - $i, 14), $id]);
